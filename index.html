@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pomodoro — Focus Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Pomodoro</h1>
+      <button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙️</button>
+    </header>
+
+    <section class="timer-wrap">
+      <svg class="progress-ring" width="240" height="240" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+        <circle class="ring" cx="60" cy="60" r="54"></circle>
+      </svg>
+
+      <div class="timer-content">
+        <div id="modeLabel" class="mode">Work</div>
+        <div id="timeDisplay" class="time">25:00</div>
+        <div class="controls">
+          <button id="startPauseBtn" class="primary">Start</button>
+           <button id="skipBtn" class="secondary" title="Skip">⏭️ Skip</button>
+           <button id="resetBtn" class="secondary">Reset</button>
+        </div>
+        <div class="adjust-controls" aria-hidden="false">
+           <button id="addMinBtn" class="adjust" title="Add 1 minute">+1m</button>
+           <button id="subMinBtn" class="adjust" title="Subtract 1 minute">-1m</button>
+       </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="meta">
+        <span id="cyclesLabel">Cycles: 0</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Settings modal -->
+  <div id="settingsModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <h2>Settings</h2>
+      <label>Work (minutes)
+        <input id="workInput" type="number" min="1" max="180" value="25" />
+      </label>
+      <label>Short break (minutes)
+        <input id="shortInput" type="number" min="1" max="60" value="5" />
+      </label>
+      <label>Long break (minutes)
+        <input id="longInput" type="number" min="1" max="120" value="15" />
+      </label>
+      <label>Long break every N cycles
+        <input id="cyclesBeforeLong" type="number" min="1" max="10" value="4" />
+      </label>
+      <label class="checkbox">
+        <input id="soundToggle" type="checkbox" checked />
+        Enable bell sound
+      </label>
+      <label class="checkbox">
+        <input id="autoStartToggle" type="checkbox" />
+        Auto-start next period
+      </label>
+
+      <div class="modal-actions">
+        <button id="saveSettingsBtn" class="primary">Save</button>
+        <button id="closeSettingsBtn" class="secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bellAudio" src="assets/bell.mp3" preload="auto"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
