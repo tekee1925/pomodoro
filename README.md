@@ -1,18 +1,26 @@
-# Pomodoro —  Web app
+# Pomodoro Web App
 
-Files:
-- `index.html`
-- `styles.css`
-- `app.js`
-- `assets/bell.mp3` (place a short bell sound here)
+A simple timer to help you focus. It follows the Pomodoro method rules. 
+Built with pure HTML, CSS, and JavaScript. Mobile-friendly and responsive.
 
-How to run:
-- Option A (quick): Open `index.html` in your browser (double-click).
-- Option B (better, uses a local server):
-  - From the project folder run:
-    - `python -m http.server 8000`
-  - Open `http://localhost:8000` in your browser.
+**[🔴 LIVE DEMO: Click here to open the timer](https://tekee1925.github.io/pomodoro/)**
 
-Notes:
-- Settings persist in `localStorage`.
-- Add your own `assets/bell.mp3` (short chime).
+## Features
+
+- **Timer Controls:** Start, pause, reset, and skip sessions.
+- **Adjustable Time:** Add or subtract minutes (+1m / -1m) easily.
+- **Customizable:** Change work, short break, and long break durations.
+- **Sound:** Bell sound plays when time is up (`assets/bell.mp3`).
+- **Settings:** Click the ⚙️ icon to change preferences.
+- **Clean Design:** Modern and works on mobile phones.
+
+## Getting Started
+
+### Local usage
+
+**Option 1:** Open `index.html` directly in your browser.
+
+**Option 2:** Run a local server (recommended for audio to work perfectly):
+
+```sh
+python -m http.server 8000
